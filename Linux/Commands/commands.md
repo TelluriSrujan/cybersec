@@ -68,7 +68,7 @@ $ touch [Options] file
 ###Some important syntax and shortcuts in `touch` command :
 
 to create a file that doesn't exist : 
-`touch [Filename] file`
+`touch [File]`
 
 to change only access time :
 `touch -a [File]`
@@ -123,7 +123,7 @@ $ cat [File1] [File2]
 to concatenate the whole output to a new file named 'file' :
 `cat [File1] [File 2] ... > [File]`
 
-to truncate the previous contents of an existing files :
+create a new file or overwrite an existing one using standard input :
 `cat > [File]`
 
 to add new output directly instead of replacing existing contents :
@@ -140,7 +140,7 @@ to squeeze multiple blank lines into one blank line :
 
 (7) To let the user read the entire file without scrolling till the end
 ```
-$ less [Filename]
+$ less [File]
 ```
 ###Some important syntax and shortcuts in `less` command :
 
@@ -174,7 +174,7 @@ to show line numbers :
 `less -N [File]`
 
 to open the end of a file :
-`less +G [File}`
+`less +G [File]`
 
 to follow new content a it is added :
 `less +F [File]`
