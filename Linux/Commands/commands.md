@@ -1,10 +1,10 @@
 # Linux Commands
 
-To print working directory 
+(1) To print working directory 
 ```
 $ pwd 
 ```
-To change directory
+(2) To change directory
 ```
 $ cd
 ```
@@ -13,7 +13,7 @@ $ cd
 changing directory with absolute path :
 `cd [Absolute Path]`
 
- Navigation to:
+ Navigation to :
  
  current directory :
 `cd .`
@@ -23,7 +23,6 @@ parent directory :
 
 home directory :
 `cd ~`
-`cd`
 
 previous directory :
 `cd -`
@@ -31,7 +30,7 @@ previous directory :
 going up 2 levels :
 `cd ../..`
 
-To see the files and directories present in the working directory
+(3) To see the files and directories present in the working directory
 
 ```
 $ ls
@@ -61,3 +60,127 @@ to list the directories instead of the contents :
 
 to show long format
 `ls -l`
+
+(4) To manage filestamps and create empty files
+```
+$ touch [Options] file
+```
+###Some important syntax and shortcuts in `touch` command :
+
+to create a file that doesn't exist : 
+`touch [Filename] file`
+
+to change only access time :
+`touch -a [Filename]`
+
+to change only modification time :
+`touch -m [File`
+
+to accept date string instead of using current time :
+`touch -d [File]`
+
+to give same access and modification time as the reference folder :
+`touch -r [Reference File] [Target File]`
+
+to update an existing file and not create a new file if it doesn't exist :
+`touch -c [File]`
+
+Note :
+
+Using the `touch` command on an existing file changes both the access time and modification time to current time.
+
+(5) To identify the file's likely content without relying on the name or extension
+```
+$ file [File]
+```
+###Some important syntax and shortcuts in `file` command :
+
+to expand to match non-hidden items and inspect each resulting operand :
+`file *`
+
+to show MIME-style info :
+`file -i`
+
+to use brief mode to omit the filename from the output :
+`file -b`
+
+to flow symbolic links and classify the targets :
+`file -L`
+
+to try examining the contents of compressed files :
+`file -z`
+
+Note:
+
+An unusual, incomplete or damaged files may receive a broad description of 'data' instead of the precise type.
+
+(6) To display files and join their contents
+```
+$ cat [File1] [File2]
+```
+###Some important syntax and shortcuts in `cat` command :
+
+to concatenate the whole output to a new file named 'file' :
+`cat [File1] [File 2] ... > [File]`
+
+to truncate the previous contents of an existing files :
+`cat > [File]`
+
+to add new output directly instead of replacing existing contents :
+`cat >> [File]`
+
+to number all output lines starting from 1 :
+`cat -n`
+
+to number only non empty lines :
+`cat -b`
+
+to squeeze multiple blank lines into one blank line :
+`cat -s`
+
+(7) To let the user read the entire file without scrolling till the end
+```
+$ less [Filename]
+```
+###Some important syntax and shortcuts in `less` command :
+
+Navigation in `less` :
+
+g --> Jump to beginning
+
+G --> Jump to end
+
+u --> Move up half screen
+
+d --> Move down half screen
+
+h --> Jump to built in help
+
+Searching in `less` :
+
+/search-term --> Searches forward for the term
+
+?search-term --> Searches backward for the term
+
+n --> Repeat the search in the same direction
+
+N --> Repeat the search in opposite direction
+
+q --> Quits the pager and restores the shell prompt
+
+Starting `less` with options :
+
+to show line numbers :
+`less -N [File]`
+
+to open the end of a file :
+`less +G [File}`
+
+to follow new content a it is added :
+`less +F [File]`
+
+to search and ignore cases until a pattern emerges :
+`less -i [File]`
+
+to ignore cases regardless of pattern :
+`less -I [File]`
