@@ -71,10 +71,10 @@ to create a file that doesn't exist :
 `touch [Filename] file`
 
 to change only access time :
-`touch -a [Filename]`
+`touch -a [File]`
 
 to change only modification time :
-`touch -m [File`
+`touch -m [File]`
 
 to accept date string instead of using current time :
 `touch -d [File]`
