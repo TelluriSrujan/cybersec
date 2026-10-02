@@ -184,3 +184,125 @@ to search and ignore cases until a pattern emerges :
 
 to ignore cases regardless of pattern :
 `less -I [File]`
+
+(8)To display and manage the record of commands entered
+```
+$ history
+```
+
+###Some important syntax and shortcuts in `history` command :
+
+to recall earlier commands for review and editing :
+'up arrow'
+
+to expand and execute the most recent command :
+`!!`
+
+to run a command by the number :
+`!(number)`
+
+Ex: `!102` runs the command no. 102 from the history
+
+to run a command by prefix :
+`!(prefix)`
+
+Ex: `!cat` runs the most recent command that started with cat
+
+to begin a reverse instrumental search through command history :
+'Ctrl+R'
+
+to clear the current in-memory list :
+`history -c`
+
+to write the current list to a configured history file :
+`history -w`
+
+to delete the entry at the given entry position :
+`history -d <offset>`
+
+(9) To have a fresh visible terminal area :
+```
+$ clear
+```
+
+(10) To copy the files and directory trees while controlling overwrites and preserved attributes :
+```
+$ cp [Options] [Source File] [Destination File]
+```
+
+###Some important syntax and shortcuts in `cp` command :
+
+to provide a new destination to an already existing directory :
+`cp [Source] [Destination Filepath/new destination]`
+
+to copy multiple files into a directory :
+`cp [Source 1] [Source 2] ... [Destination File]`
+
+to copy the whole contents of a directory into another :
+`to -r`
+
+to request recursive copying :
+`cp -R`
+
+to copy recursively while preserving any file attributes and links :
+`cp -a`
+
+to request confirmation before overwrite :
+`cp -i`
+
+to not overwrite an existing destination file :
+`cp -n`
+
+to preserve source file mode, ownership (when permitted) and timestamps :
+`cp -p`
+
+to copy source only when destination is missing or source is newer :
+`cp -u`
+
+to force overwrite by removing destination first if needed :
+`cp -f`
+
+to show each file as it is copied :
+`cp -v`
+
+Note: By default `cp` replaces an existing destination file.
+
+Wildcards in `cp` :
+
+Matches any sequence of characters :
+`*`
+
+Matches any single character :
+`?`
+
+Matches any one of the characters enclosed in brackets :
+`[]`
+
+Ex: `cp *.jpg /home` copies names ending with .jpg from current directory to 'home' directory
+
+(11) To rename and move a file without leaving the original pathname in place :
+```
+$ mv [Options] [Source File] [Destination File]
+```
+
+###Some important syntax and shortcuts in `mv` command :
+
+to move multiple items into a directory :
+`mv [Source 1] [Source 2] ... [Destination]`
+
+to place target directory before the sources :
+`mv -t [Destination File]/ [Source 1] [Source 2] ...`
+
+to ask for confirmation before replacing an existing destination :
+`mv -i`
+
+to not override the existing destination :
+`mv -n`
+
+to make a backup of a destination which would otherwise be replaced :
+`mv -b`
+
+Note: The default backup suffix is '~'
+
+to print each move as it happens :
+`mv -v`
