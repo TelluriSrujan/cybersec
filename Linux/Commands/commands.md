@@ -1,5 +1,21 @@
 # Linux Commands
 
+Wildcards in shell :
+
+Matches any sequence of characters :
+`*`
+
+Matches any single character :
+`?`
+
+Matches any one of the characters enclosed in brackets :
+`[]`
+
+Ex: `cp *.jpg /home` copies names ending with .jpg from current directory to 'home' directory
+
+Note :
+These wildcards can be used with many commands in the shell which support wildcards.
+
 (1) To print working directory 
 ```
 $ pwd 
@@ -267,19 +283,6 @@ to show each file as it is copied :
 
 Note: By default `cp` replaces an existing destination file.
 
-Wildcards in `cp` :
-
-Matches any sequence of characters :
-`*`
-
-Matches any single character :
-`?`
-
-Matches any one of the characters enclosed in brackets :
-`[]`
-
-Ex: `cp *.jpg /home` copies names ending with .jpg from current directory to 'home' directory
-
 (11) To rename and move a file without leaving the original pathname in place :
 ```
 $ mv [Options] [Source File] [Destination File]
@@ -306,3 +309,178 @@ Note: The default backup suffix is '~'
 
 to print each move as it happens :
 `mv -v`
+
+(12) To create directories for organising files and other directories :
+```
+$ mkdir [Options] [Directory Name]
+```
+Note :
+
+If a directory already exists, `mkdir` reports an error and does not replace the existing directory.
+
+###Some Important shortcuts and syntax in `mkdir` command :
+
+to create multiple directories at once :
+`mkdir [Directory1] [Directory2] ...`
+
+to create missing parts of a filepath if an intermediary directory is missing :
+`mkdir -p [Filepath]`
+
+to specify permissions for a newly corrected directory :
+`mkdir -m`
+
+to print a message for each directory created :
+`mkdir -v`
+
+
+(13) To remove filesystem entries :
+```
+$ rm [Options] [Filepath]
+```
+###Some Important shortcuts and syntax in `rm` command :
+
+to remove multip0el files at once :
+`rm [File1[ [File2]....`
+
+to ask for permission before each interval :
+`rm -i`
+
+to ignore missing operands and suppress prompts :
+`rm -r`
+
+to remove a directory tree and all of its contents :
+`rm -r`
+
+to remove an empty directory :
+`rmdir`
+
+Note : `rmdir` removes only empty directories and fails for non empty directories.
+
+to report and send message after every single removal :
+`rm -v`
+
+(14) To search directory trees by name, type, size and time and act on verified matches :
+
+```
+$ find [Path] [Expression]
+```
+Note : By default `find` is recursive.
+
+###Some Important shortcuts and syntax in `find` command :
+
+to search in the current directory :
+`find . [Expression]`
+
+to match exact base names :
+`find -name [Expression]`
+
+to select directories :
+`find -type d [Expression]`
+
+to select files :
+`find -type f [Expression]`
+
+to match the size :
+`find -size [Expression]`
+
+to determine greater than less than in finding size :
+`find -size +- [Expression]`
+
+to print the matches :
+`find -print`
+
+to find and execute or directory and execute the command on files found :
+`find -exec [Command]`
+
+(15) To choose built-in help, program usage or manual pages for a command :
+```
+$ help [Built-in Name]
+```
+###Some Important shortcuts and syntax in `help` command :
+
+to provide a usage summary of all the commands in list provided by `ls` command :
+`ls --help`
+
+(16) To open, navigate, search and select sections of installed manual pages :
+```
+$ man [Section] [Command]
+```
+###Some Important shortcuts and syntax in `man` command :
+
+Navigating through `man` :
+
+/pattern --> search forward for the pattern 
+
+n --> repeat search for the same pattern
+
+N --> repeat search in the opposite direction
+
+q --> quit
+
+Selecting manual section :
+
+1 --> user commands
+
+2 --> system calls
+
+3 --> library functions
+
+5 --> file formats
+
+8 --> system administrator commands
+
+9 --> kernel routines
+
+Note :
+
+Built in commands do not have a general man page. They can be accessed by :
+`man builtins [Command]`
+
+(17) To retrieve consice manual page descriptions and interpret their section numbers :
+```
+$ whatis [Command]
+```
+
+(18) To search manual page page names and keywords from a keyword :
+```
+$ aprops [Keyword]
+```
+
+(19) To show how the shell resolve a current name, independent of whether a manual description is installed :
+```
+$ type [Command]
+```
+
+(20) To create, inspect, persist, bypass and remove command aliases ;
+```
+$ alias [Command] = [Replacement]
+```
+###Some Important shortcuts and syntax in `alias` command :
+
+To remove an alias from current bash shell :
+`unalias [Command]`
+
+(21) To run a command while ignoring any shell function or alias that shares the same name :
+```
+$ \[Command]
+command [Command]
+```
+
+(22) To leave current shell and choose the status it returns to its caller :
+```
+$ exit
+```
+###Some Important shortcuts and syntax in `exit` command :
+
+To set the status returned to shell's caller :
+`exit [Numeral]`
+
+Note :
+
+By convention :
+
+0 --> success
+
+Non-zero --> Failure or another conditional defined by the program
+
+No argument --> Exits with the status of last command
