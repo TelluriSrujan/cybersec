@@ -16,6 +16,8 @@ Ex: `cp *.jpg /home` copies names ending with .jpg from current directory to 'ho
 Note :
 These wildcards can be used with many commands in the shell which support wildcards.
 
+##Command Line
+
 (1) To print working directory 
 ```
 $ pwd 
@@ -484,3 +486,7 @@ By convention :
 Non-zero --> Failure or another conditional defined by the program
 
 No argument --> Exits with the status of last command
+
+##Text-Fu
+
+(23)
