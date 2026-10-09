@@ -255,7 +255,7 @@ to copy multiple files into a directory :
 `cp [Source 1] [Source 2] ... [Destination File]`
 
 to copy the whole contents of a directory into another :
-`to -r`
+`cp -r`
 
 to request recursive copying :
 `cp -R`
@@ -326,7 +326,7 @@ to create multiple directories at once :
 to create missing parts of a filepath if an intermediary directory is missing :
 `mkdir -p [Filepath]`
 
-to specify permissions for a newly corrected directory :
+to specify permissions for a newly created directory :
 `mkdir -m`
 
 to print a message for each directory created :
@@ -340,13 +340,13 @@ $ rm [Options] [Filepath]
 ###Some Important shortcuts and syntax in `rm` command :
 
 to remove multip0el files at once :
-`rm [File1[ [File2]....`
+`rm [File1] [File2]....`
 
 to ask for permission before each interval :
 `rm -i`
 
 to ignore missing operands and suppress prompts :
-`rm -r`
+`rm -f`
 
 to remove a directory tree and all of its contents :
 `rm -r`
@@ -372,25 +372,25 @@ to search in the current directory :
 `find . [Expression]`
 
 to match exact base names :
-`find -name [Expression]`
+`find . -name [Expression]`
 
 to select directories :
-`find -type d [Expression]`
+`find . -type d [Expression]`
 
 to select files :
-`find -type f [Expression]`
+`find . -type f [Expression]`
 
 to match the size :
-`find -size [Expression]`
+`find . -size [Expression]`
 
 to determine greater than less than in finding size :
-`find -size +- [Expression]`
+`find . -size +- [Expression]`
 
 to print the matches :
-`find -print`
+`find . -print`
 
 to find and execute or directory and execute the command on files found :
-`find -exec [Command]`
+`find . -exec [Command]`
 
 (15) To choose built-in help, program usage or manual pages for a command :
 ```
@@ -443,7 +443,7 @@ $ whatis [Command]
 
 (18) To search manual page page names and keywords from a keyword :
 ```
-$ aprops [Keyword]
+$ apropos [Keyword]
 ```
 
 (19) To show how the shell resolve a current name, independent of whether a manual description is installed :
@@ -453,7 +453,7 @@ $ type [Command]
 
 (20) To create, inspect, persist, bypass and remove command aliases ;
 ```
-$ alias [Command] = [Replacement]
+$ alias [Command]=[Replacement]
 ```
 ###Some Important shortcuts and syntax in `alias` command :
 
