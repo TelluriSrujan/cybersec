@@ -16,13 +16,19 @@ Ex: `cp *.jpg /home` copies names ending with .jpg from current directory to 'ho
 Note :
 These wildcards can be used with many commands in the shell which support wildcards.
 
-##Command Line
+##Commands
 
 (1) To print working directory 
 ```
 $ pwd 
 ```
-(2) To change directory
+
+(2) To display the name of current logged in user 
+```
+$whoami
+```
+
+(3) To change directory
 ```
 $ cd
 ```
@@ -48,7 +54,26 @@ previous directory :
 going up 2 levels :
 `cd ../..`
 
-(3) To see the files and directories present in the working directory
+(4) To check the date and time
+```
+$ date
+```
+###Some important syntax shortcuts in `date` command :
+
+to see only the date :
+`date +%D`
+
+to see only time :
+`date +%T`
+
+Note :
+Date command can be customised.
+
+Ex :
+to see only hours and minutes :
+`date +&H:%M`
+
+(5) To see the files and directories present in the working directory
 
 ```
 $ ls
@@ -79,7 +104,7 @@ to list the directories instead of the contents :
 to show long format
 `ls -l`
 
-(4) To manage filestamps and create empty files
+(6) To manage filestamps and create empty files
 ```
 $ touch [Options] file
 ```
@@ -107,7 +132,7 @@ Note :
 
 Using the `touch` command on an existing file changes both the access time and modification time to current time.
 
-(5) To identify the file's likely content without relying on the name or extension
+(7) To identify the file's likely content without relying on the name or extension
 ```
 $ file [File]
 ```
@@ -132,7 +157,7 @@ Note:
 
 An unusual, incomplete or damaged files may receive a broad description of 'data' instead of the precise type.
 
-(6) To display files and join their contents
+(8) To display files and join their contents
 ```
 $ cat [File1] [File2]
 ```
@@ -156,7 +181,7 @@ to number only non empty lines :
 to squeeze multiple blank lines into one blank line :
 `cat -s`
 
-(7) To let the user read the entire file without scrolling till the end
+(9) To let the user read the entire file without scrolling till the end
 ```
 $ less [File]
 ```
@@ -203,7 +228,12 @@ to search and ignore cases until a pattern emerges :
 to ignore cases regardless of pattern :
 `less -I [File]`
 
-(8)To display and manage the record of commands entered
+(10) To let the user read a file page by page and search for words
+```
+$ more [Options] [File]
+```
+
+(11)To display and manage the record of commands entered
 ```
 $ history
 ```
@@ -238,12 +268,14 @@ to write the current list to a configured history file :
 to delete the entry at the given entry position :
 `history -d <offset>`
 
-(9) To have a fresh visible terminal area :
+(12) To have a fresh visible terminal area :
 ```
 $ clear
 ```
+Shortcut :
+"Ctrl + L"
 
-(10) To copy the files and directory trees while controlling overwrites and preserved attributes :
+(13) To copy the files and directory trees while controlling overwrites and preserved attributes :
 ```
 $ cp [Options] [Source File] [Destination File]
 ```
@@ -285,7 +317,7 @@ to show each file as it is copied :
 
 Note: By default `cp` replaces an existing destination file.
 
-(11) To rename and move a file without leaving the original pathname in place :
+(14) To rename and move a file without leaving the original pathname in place :
 ```
 $ mv [Options] [Source File] [Destination File]
 ```
@@ -312,7 +344,13 @@ Note: The default backup suffix is '~'
 to print each move as it happens :
 `mv -v`
 
-(12) To create directories for organising files and other directories :
+(15) To create a file and also edit it
+```
+vi [File]
+```
+
+
+(15) To create directories for organising files and other directories :
 ```
 $ mkdir [Options] [Directory Name]
 ```
@@ -335,7 +373,7 @@ to print a message for each directory created :
 `mkdir -v`
 
 
-(13) To remove filesystem entries :
+(16) To remove filesystem entries :
 ```
 $ rm [Options] [Filepath]
 ```
@@ -361,7 +399,7 @@ Note : `rmdir` removes only empty directories and fails for non empty directorie
 to report and send message after every single removal :
 `rm -v`
 
-(14) To search directory trees by name, type, size and time and act on verified matches :
+(17) To search directory trees by name, type, size and time and act on verified matches :
 
 ```
 $ find [Path] [Expression]
@@ -394,7 +432,7 @@ to print the matches :
 to find and execute or directory and execute the command on files found :
 `find . -exec [Command]`
 
-(15) To choose built-in help, program usage or manual pages for a command :
+(18) To choose built-in help, program usage or manual pages for a command :
 ```
 $ help [Built-in Name]
 ```
@@ -403,7 +441,7 @@ $ help [Built-in Name]
 to provide a usage summary of all the commands in list provided by `ls` command :
 `ls --help`
 
-(16) To open, navigate, search and select sections of installed manual pages :
+(19) To open, navigate, search and select sections of installed manual pages :
 ```
 $ man [Section] [Command]
 ```
@@ -438,22 +476,22 @@ Note :
 Built in commands do not have a general man page. They can be accessed by :
 `man builtins [Command]`
 
-(17) To retrieve consice manual page descriptions and interpret their section numbers :
+(20) To retrieve consice manual page descriptions and interpret their section numbers :
 ```
 $ whatis [Command]
 ```
 
-(18) To search manual page page names and keywords from a keyword :
+(21) To search manual page page names and keywords from a keyword :
 ```
 $ apropos [Keyword]
 ```
 
-(19) To show how the shell resolve a current name, independent of whether a manual description is installed :
+(22) To show how the shell resolve a current name, independent of whether a manual description is installed :
 ```
 $ type [Command]
 ```
 
-(20) To create, inspect, persist, bypass and remove command aliases ;
+(23) To create, inspect, persist, bypass and remove command aliases ;
 ```
 $ alias [Command]=[Replacement]
 ```
@@ -462,13 +500,13 @@ $ alias [Command]=[Replacement]
 To remove an alias from current bash shell :
 `unalias [Command]`
 
-(21) To run a command while ignoring any shell function or alias that shares the same name :
+(24) To run a command while ignoring any shell function or alias that shares the same name :
 ```
 $ \[Command]
 command [Command]
 ```
 
-(22) To leave current shell and choose the status it returns to its caller :
+(25) To leave current shell and choose the status it returns to its caller :
 ```
 $ exit
 ```
@@ -486,7 +524,3 @@ By convention :
 Non-zero --> Failure or another conditional defined by the program
 
 No argument --> Exits with the status of last command
-
-##Text-Fu
-
-(23)
